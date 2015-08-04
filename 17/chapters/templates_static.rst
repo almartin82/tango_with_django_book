@@ -64,6 +64,8 @@ Here we make use of the ``os.path.join()`` to mash together the ``BASE_DIR`` var
 
 We can keep the ``TEMPLATE_PATH`` variable at the top of our ``settings.py`` module to make it easy to access should it ever need to be changed. This is why we created an additional variable to store the template path.
 
+.. note:: If you see an list named ``TEMPLATES = []`` in ``settings.py``, that means you are using Django ``1.8`` or higher.  ``TEMPLATES`` are new in ``1.8``.  Check out the `documentation on this topic <https://docs.djangoproject.com/en/1.8/ref/templates/upgrading/>`_.  To follow along with the example here, put `TEMPLATE_PATH` into the dict like so:  ``'DIRS': [TEMPLATE_PATH],``
+
 .. warning:: When joining or concatenating system paths together, using ``os.path.join()`` is the preferred approach. Using this function ensures that the correct slashes are used depending on your operating system. On a POSIX-compatible operating system, forward slashes would be used to separate directories, whereas a Windows operating system would use backward slashes. If you manually append slashes to paths, you may end up with path errors when attempting to run your code on a different operating system.
 
 
